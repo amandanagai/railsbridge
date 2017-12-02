@@ -1,0 +1,9 @@
+<h1>RailsBridgeCorp Open Jobs</h1>
+
+<% @jobs.each do |job| %>
+  <h3>Title: <%= job.title %></h3>
+  <p><%= "Description: no description" unless job.description %></p>
+  <p><%= "Description: #{job.description}" if job.description %></p>
+  <%= link_to "Edit", edit_job_path(job.id) -%>
+  <h5><%= link_to 'Delete Posting', job, method: :delete %></h5>
+<% end %>
